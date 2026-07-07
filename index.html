@@ -575,7 +575,7 @@
       display: flex;
       align-items: stretch;
       width: max-content;
-      animation: flavourScroll 70s linear infinite;
+      animation: flavourScroll 56s linear infinite;
       will-change: transform;
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;
@@ -632,6 +632,31 @@
     @keyframes flavourScroll {
       from { transform: translate3d(0, 0, 0); }
       to { transform: translate3d(-50%, 0, 0); }
+    }
+
+
+    .extra-products-wrap,
+    .values-section .page-shell,
+    .order-section .page-shell,
+    .about-section .page-shell,
+    .site-footer .page-shell {
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+
+    @media (max-width: 599px) {
+      .extra-products-wrap,
+      .values-section .page-shell,
+      .order-section .page-shell,
+      .about-section .page-shell {
+        width: calc(100% - 40px);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .extra-products-grid {
+        width: 100%;
+      }
     }
 
     .product-card {
@@ -1656,7 +1681,7 @@
       }
 
       .flavour-track {
-        animation-duration: 70s;
+        animation-duration: 56s;
       }
 
       .flavour-slide {
@@ -1692,7 +1717,7 @@
 
       .reviews-track {
         gap: 22px;
-        animation-duration: 70s;
+        animation-duration: 56s;
       }
 
       .review-card {
@@ -1798,6 +1823,11 @@
 
     @media (max-width: 599px) {
       .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .extra-products-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
       }
@@ -2019,22 +2049,6 @@
           <div class="flavour-marquee">
             <div class="flavour-track">
               <div class="flavour-set" aria-hidden="false">
-                <article class="flavour-slide" style="--slide-tone:#a01858">
-                  <div class="flavour-slide-image"><img src="assets/slider-beetroot.png" alt="Beetroot Ginger Shot" loading="eager"></div>
-                  <div class="flavour-slide-name">Beetroot Ginger Shot</div>
-                </article>
-                <article class="flavour-slide" style="--slide-tone:#ef4b00">
-                  <div class="flavour-slide-image"><img src="assets/slider-carrot.png" alt="Carrot Ginger Shot" loading="eager"></div>
-                  <div class="flavour-slide-name">Carrot Ginger Shot</div>
-                </article>
-                <article class="flavour-slide" style="--slide-tone:#76a51b">
-                  <div class="flavour-slide-image"><img src="assets/slider-green-apple.png" alt="Green Apple Ginger Shot" loading="eager"></div>
-                  <div class="flavour-slide-name">Green Apple Ginger Shot</div>
-                </article>
-                <article class="flavour-slide" style="--slide-tone:#ef7900">
-                  <div class="flavour-slide-image"><img src="assets/slider-orange.png" alt="Orange Ginger Shot" loading="eager"></div>
-                  <div class="flavour-slide-name">Orange Ginger Shot</div>
-                </article>
                 <article class="flavour-slide" style="--slide-tone:#805336">
                   <div class="flavour-slide-image"><img src="assets/slider-coffee.png" alt="Coffee & Ginger Shot" loading="eager"></div>
                   <div class="flavour-slide-name">Coffee & Ginger Shot</div>
@@ -2078,25 +2092,45 @@
                 <article class="flavour-slide" style="--slide-tone:#805336">
                   <div class="flavour-slide-image"><img src="assets/slider-coffee.png" alt="Coffee & Ginger Shot" loading="eager"></div>
                   <div class="flavour-slide-name">Coffee & Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#a01858">
+                  <div class="flavour-slide-image"><img src="assets/slider-beetroot.png" alt="Beetroot Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Beetroot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef4b00">
+                  <div class="flavour-slide-image"><img src="assets/slider-carrot.png" alt="Carrot Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Carrot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#76a51b">
+                  <div class="flavour-slide-image"><img src="assets/slider-green-apple.png" alt="Green Apple Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Green Apple Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef7900">
+                  <div class="flavour-slide-image"><img src="assets/slider-orange.png" alt="Orange Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Orange Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#805336">
+                  <div class="flavour-slide-image"><img src="assets/slider-coffee.png" alt="Coffee & Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Coffee & Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#a01858">
+                  <div class="flavour-slide-image"><img src="assets/slider-beetroot.png" alt="Beetroot Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Beetroot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef4b00">
+                  <div class="flavour-slide-image"><img src="assets/slider-carrot.png" alt="Carrot Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Carrot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#76a51b">
+                  <div class="flavour-slide-image"><img src="assets/slider-green-apple.png" alt="Green Apple Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Green Apple Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef7900">
+                  <div class="flavour-slide-image"><img src="assets/slider-orange.png" alt="Orange Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Orange Ginger Shot</div>
                 </article>
               </div>
               <div class="flavour-set" aria-hidden="true">
-                <article class="flavour-slide" style="--slide-tone:#a01858">
-                  <div class="flavour-slide-image"><img src="assets/slider-beetroot.png" alt="" loading="eager"></div>
-                  <div class="flavour-slide-name">Beetroot Ginger Shot</div>
-                </article>
-                <article class="flavour-slide" style="--slide-tone:#ef4b00">
-                  <div class="flavour-slide-image"><img src="assets/slider-carrot.png" alt="" loading="eager"></div>
-                  <div class="flavour-slide-name">Carrot Ginger Shot</div>
-                </article>
-                <article class="flavour-slide" style="--slide-tone:#76a51b">
-                  <div class="flavour-slide-image"><img src="assets/slider-green-apple.png" alt="" loading="eager"></div>
-                  <div class="flavour-slide-name">Green Apple Ginger Shot</div>
-                </article>
-                <article class="flavour-slide" style="--slide-tone:#ef7900">
-                  <div class="flavour-slide-image"><img src="assets/slider-orange.png" alt="" loading="eager"></div>
-                  <div class="flavour-slide-name">Orange Ginger Shot</div>
-                </article>
                 <article class="flavour-slide" style="--slide-tone:#805336">
                   <div class="flavour-slide-image"><img src="assets/slider-coffee.png" alt="" loading="eager"></div>
                   <div class="flavour-slide-name">Coffee & Ginger Shot</div>
@@ -2140,9 +2174,46 @@
                 <article class="flavour-slide" style="--slide-tone:#805336">
                   <div class="flavour-slide-image"><img src="assets/slider-coffee.png" alt="" loading="eager"></div>
                   <div class="flavour-slide-name">Coffee & Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#a01858">
+                  <div class="flavour-slide-image"><img src="assets/slider-beetroot.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Beetroot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef4b00">
+                  <div class="flavour-slide-image"><img src="assets/slider-carrot.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Carrot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#76a51b">
+                  <div class="flavour-slide-image"><img src="assets/slider-green-apple.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Green Apple Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef7900">
+                  <div class="flavour-slide-image"><img src="assets/slider-orange.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Orange Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#805336">
+                  <div class="flavour-slide-image"><img src="assets/slider-coffee.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Coffee & Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#a01858">
+                  <div class="flavour-slide-image"><img src="assets/slider-beetroot.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Beetroot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef4b00">
+                  <div class="flavour-slide-image"><img src="assets/slider-carrot.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Carrot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#76a51b">
+                  <div class="flavour-slide-image"><img src="assets/slider-green-apple.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Green Apple Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef7900">
+                  <div class="flavour-slide-image"><img src="assets/slider-orange.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Orange Ginger Shot</div>
                 </article>
               </div>
             </div>
+          </div>
           </div>
           </div>
         </div>
@@ -2904,7 +2975,7 @@
   Shijet: ${packageChoiceSummary(id)}` : "";
         return `- ${product.name} x${qty}${priceText}${packageText}`;
       }).join("\n");
-      const message = `Përshëndetje, dua të bëj një porosi për Ginger Shot.
+      const message = `Përshëndetje, dua të bëj një porosi për Illyrian Healthy Line
 
 Emri dhe mbiemri: ${name}
 Adresa: ${address}
