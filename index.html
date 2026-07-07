@@ -1,0 +1,2925 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ginger Shot - pije wellness natyrale me porosi direkte në WhatsApp." />
+  <title>Ginger Shot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf8f4;
+      --bg-soft: #f6f1ea;
+      --paper: #fffdfa;
+      --paper-2: #fff8ef;
+      --text: #202124;
+      --muted: #77716a;
+      --muted-2: #a09386;
+      --line: rgba(32, 33, 36, 0.08);
+      --line-warm: rgba(239, 124, 9, 0.18);
+      --orange: #ef7900;
+      --orange-soft: #fff0df;
+      --brown: #805336;
+      --green: #4f8f1f;
+      --carrot: #ef4b00;
+      --beet: #a01858;
+      --shadow: 0 22px 60px rgba(42, 35, 29, 0.08);
+      --radius: 22px;
+      --radius-small: 14px;
+      --wrap: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 300;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    img,
+    svg {
+      display: block;
+    }
+
+    .page-shell {
+      width: min(var(--wrap), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 253, 250, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      font-size: clamp(0.95rem, 3.6vw, 1.28rem);
+      font-weight: 400;
+    }
+
+    .logo span {
+      color: #927b68;
+      font-weight: 300;
+    }
+
+    .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--orange);
+      display: inline-block;
+      margin-left: 3px;
+      transform: translateY(1px);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 26px;
+      color: #5f5a55;
+      font-size: 0.91rem;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 9px;
+    }
+
+    .icon-btn,
+    .menu-toggle {
+      width: 39px;
+      height: 39px;
+      border-radius: 999px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -6px;
+      right: -5px;
+      min-width: 18px;
+      height: 18px;
+      padding: 0 4px;
+      border-radius: 999px;
+      background: var(--orange);
+      color: white;
+      font-size: 0.65rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .primary-pill {
+      height: 39px;
+      border-radius: 999px;
+      padding: 0 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #2d2d2d;
+      color: white;
+      border: 1px solid #2d2d2d;
+      font-weight: 400;
+      font-size: 0.86rem;
+      white-space: nowrap;
+      transition: transform 0.22s ease, background 0.22s ease;
+    }
+
+    .primary-pill:hover {
+      transform: translateY(-1px);
+      background: #181818;
+    }
+
+    .menu-toggle {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .menu-toggle span {
+      width: 16px;
+      height: 1px;
+      background: #2d2d2d;
+      display: block;
+    }
+
+    .mobile-panel {
+      display: none;
+      width: min(var(--wrap), calc(100% - 40px));
+      margin: 0 auto 16px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 250, 0.98);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .mobile-panel.is-open {
+      display: grid;
+      gap: 8px;
+    }
+
+    .mobile-panel a {
+      padding: 12px 14px;
+      border-radius: 999px;
+      color: #4f4b47;
+      background: rgba(250, 248, 244, 0.78);
+      border: 1px solid rgba(32, 33, 36, 0.045);
+    }
+
+    .section {
+      padding: 74px 0;
+    }
+
+    .hero {
+      padding: 54px 0 70px;
+      border-bottom: 1px solid rgba(32, 33, 36, 0.04);
+      background:
+        radial-gradient(circle at 8% 20%, rgba(239, 121, 0, 0.07), transparent 25%),
+        radial-gradient(circle at 90% 36%, rgba(79, 143, 31, 0.05), transparent 25%),
+        var(--bg);
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 28px;
+      padding: 5px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(239, 121, 0, 0.22);
+      background: rgba(255, 242, 229, 0.72);
+      color: #ac6322;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow-pill::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 400;
+      line-height: 1.13;
+      letter-spacing: -0.045em;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.95rem, 7.4vw, 4rem);
+      max-width: 700px;
+      margin-bottom: 18px;
+      line-height: 1.12;
+      letter-spacing: -0.06em;
+      text-wrap: balance;
+    }
+
+    .hero-title .title-line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .hero-title .title-line + .title-line {
+      margin-top: 0.12em;
+    }
+
+    .hero-title .accent {
+      color: var(--orange);
+    }
+
+    .hero p {
+      color: #665e57;
+      font-size: clamp(0.98rem, 3.6vw, 1.09rem);
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn-dark,
+    .btn-ghost,
+    .add-btn,
+    .submit-btn {
+      min-height: 48px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 24px;
+      font-weight: 400;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .btn-dark,
+    .submit-btn {
+      background: #2d2d2d;
+      color: white;
+      box-shadow: 0 14px 30px rgba(45, 45, 45, 0.1);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--line);
+      color: #3b3835;
+    }
+
+    .btn-dark:hover,
+    .btn-ghost:hover,
+    .add-btn:hover,
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(32, 33, 36, 0.11);
+    }
+
+    .hero-visual-wrap {
+      position: relative;
+      max-width: 590px;
+      margin: 0 auto;
+    }
+
+    .hero-visual {
+      min-height: 320px;
+      border-radius: 24px;
+      background: #f5eadc;
+      border: 8px solid rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .bottle-lineup {
+      position: absolute;
+      left: 7%;
+      right: 7%;
+      bottom: 44px;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: end;
+      gap: clamp(8px, 2.2vw, 18px);
+    }
+
+    .bottle {
+      --liquid: var(--orange);
+      width: min(64px, 100%);
+      height: 132px;
+      margin: 0 auto;
+      position: relative;
+      border-radius: 15px 15px 18px 18px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.45), transparent 24%, rgba(0,0,0,0.04) 75%, rgba(255,255,255,0.3)),
+        linear-gradient(180deg, rgba(255,255,255,0.42) 0 22%, var(--liquid) 23% 100%);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.56), 0 18px 22px rgba(54, 35, 25, 0.13);
+    }
+
+    .bottle:nth-child(2),
+    .bottle:nth-child(4) { height: 146px; }
+    .bottle:nth-child(3) { height: 158px; }
+
+    .bottle::before {
+      content: "";
+      position: absolute;
+      top: -18px;
+      left: 26%;
+      width: 48%;
+      height: 20px;
+      border-radius: 7px 7px 3px 3px;
+      background: #1c1b19;
+      box-shadow: inset 0 -5px 0 rgba(255,255,255,0.12);
+    }
+
+    .bottle.light-cap::before { background: #f7f0e7; border: 1px solid rgba(0,0,0,0.06); }
+    .bottle.orange-cap::before { background: #ef7a00; }
+
+    .bottle::after {
+      content: "GINGER\A SHOT";
+      white-space: pre;
+      position: absolute;
+      left: 11%;
+      right: 11%;
+      top: 44%;
+      min-height: 45px;
+      border-radius: 3px;
+      background: rgba(255, 251, 244, 0.88);
+      color: #302b27;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.48rem;
+      line-height: 1.1;
+      letter-spacing: 0.08em;
+      font-weight: 400;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    }
+
+    .floating-note {
+      position: absolute;
+      left: 18px;
+      bottom: -18px;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: center;
+      max-width: 245px;
+      padding: 13px 16px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 14px 35px rgba(45, 45, 45, 0.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .note-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: #edf7e7;
+      color: var(--green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .floating-note small {
+      display: block;
+      color: #aa9e92;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.63rem;
+      margin-bottom: 1px;
+    }
+
+    .floating-note p {
+      margin: 0;
+      color: #605b55;
+      font-size: 0.77rem;
+      line-height: 1.35;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 42px;
+    }
+
+    .section-heading.left {
+      text-align: left;
+      margin-inline: 0;
+    }
+
+    .kicker {
+      color: #a48973;
+      letter-spacing: 0.13em;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 7vw, 2.45rem);
+      margin-bottom: 17px;
+    }
+
+    .small-line {
+      width: 36px;
+      height: 2px;
+      background: var(--orange);
+      margin: 0 auto 18px;
+    }
+
+    .section-heading.left .small-line {
+      margin-left: 0;
+    }
+
+    .section-heading p {
+      color: #716a63;
+      font-size: 0.94rem;
+      line-height: 1.75;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .flavour-slider-wrap {
+      margin-top: 30px;
+      overflow: hidden;
+    }
+
+    .flavour-slider-head {
+      display: grid;
+      gap: 5px;
+      margin: 0 0 16px;
+      text-align: center;
+    }
+
+    .flavour-slider-head span {
+      color: #24211f;
+      font-size: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .flavour-slider-head p {
+      color: #82786f;
+      font-size: 0.82rem;
+    }
+
+    .flavour-marquee {
+      width: 100%;
+      overflow: hidden;
+      padding: 5px 0 10px;
+      position: relative;
+    }
+
+    .flavour-track {
+      display: flex;
+      align-items: stretch;
+      width: max-content;
+      animation: flavourScroll 70s linear infinite;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .flavour-set {
+      display: flex;
+      align-items: stretch;
+      gap: 14px;
+      flex: 0 0 auto;
+      padding-right: 14px;
+      min-width: max-content;
+    }
+
+    .flavour-slide {
+      flex: 0 0 168px;
+      min-width: 168px;
+      border-radius: 22px;
+      padding: 10px 10px 13px;
+      background:
+        radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--slide-tone), transparent 88%), transparent 44%),
+        rgba(255, 253, 250, 0.86);
+      border: 1px solid color-mix(in srgb, var(--slide-tone), transparent 82%);
+      transform: translate3d(0, 0, 0);
+    }
+
+    .flavour-slide-image {
+      aspect-ratio: 1 / 1.15;
+      overflow: hidden;
+      border-radius: 17px;
+      background: color-mix(in srgb, var(--slide-tone), white 88%);
+    }
+
+    .flavour-slide-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .flavour-slide-name {
+      margin-top: 10px;
+      text-align: center;
+      color: #26231f;
+      font-size: 0.78rem;
+      line-height: 1.28;
+      min-height: 36px;
+    }
+
+    @keyframes flavourScroll {
+      from { transform: translate3d(0, 0, 0); }
+      to { transform: translate3d(-50%, 0, 0); }
+    }
+
+    .product-card {
+      --accent: var(--orange);
+      background: rgba(255, 253, 250, 0.86);
+      border: 1px solid color-mix(in srgb, var(--accent), transparent 82%);
+      border-radius: var(--radius);
+      padding: 18px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: color-mix(in srgb, var(--accent), transparent 68%);
+      box-shadow: 0 24px 50px rgba(45, 35, 28, 0.08);
+    }
+
+    .extra-products-wrap {
+      margin-top: 42px;
+    }
+
+    .extra-products-head {
+      display: grid;
+      gap: 6px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .extra-products-head span {
+      font-size: 1.08rem;
+      color: #24211f;
+      letter-spacing: -0.025em;
+    }
+
+    .extra-products-head p {
+      color: #82786f;
+      font-size: 0.84rem;
+    }
+
+    .extra-products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .placeholder-product {
+      width: 100%;
+      height: 100%;
+      min-height: 180px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 18px;
+      background:
+        radial-gradient(circle at 50% 24%, color-mix(in srgb, var(--accent), transparent 78%), transparent 38%),
+        linear-gradient(145deg, color-mix(in srgb, var(--accent), white 90%), #fffdf8);
+    }
+
+    .placeholder-product span {
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid color-mix(in srgb, var(--accent), transparent 76%);
+      color: color-mix(in srgb, var(--accent), #111 18%);
+      font-size: 1.65rem;
+      margin-bottom: 12px;
+    }
+
+    .placeholder-product small {
+      display: block;
+      color: #7b7168;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.5;
+    }
+
+    .product-image {
+      aspect-ratio: 1 / 1;
+      min-height: 0;
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 1px solid rgba(32, 33, 36, 0.065);
+      background:
+        radial-gradient(circle at 35% 22%, color-mix(in srgb, var(--accent), transparent 92%), transparent 28%),
+        linear-gradient(150deg, #f6efe5, #fffcf5 52%, #e9dfd3);
+    }
+
+    .product-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.35s ease;
+    }
+
+    .product-card:hover .product-photo {
+      transform: scale(1.025);
+    }
+
+    .flavour {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 4;
+      border-radius: 999px;
+      padding: 5px 14px;
+      background: rgba(255,255,255,0.78);
+      color: color-mix(in srgb, var(--accent), #111 22%);
+      font-size: 0.66rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .shot-visual {
+      position: absolute;
+      width: 88px;
+      height: 177px;
+      left: 50%;
+      top: 54%;
+      transform: translate(-50%, -50%);
+      border-radius: 20px 20px 24px 24px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.46), rgba(255,255,255,0.03) 22%, rgba(0,0,0,0.035) 74%, rgba(255,255,255,0.35)),
+        linear-gradient(180deg, rgba(255,255,255,0.5) 0 24%, var(--accent) 25% 100%);
+      box-shadow: 0 25px 35px rgba(51, 36, 28, 0.15), inset 0 0 0 1px rgba(255,255,255,0.55);
+    }
+
+    .shot-visual::before {
+      content: "";
+      position: absolute;
+      top: -24px;
+      left: 28%;
+      width: 44%;
+      height: 28px;
+      border-radius: 8px 8px 3px 3px;
+      background: var(--cap, #1d1c1a);
+      box-shadow: inset 0 -6px 0 rgba(255,255,255,0.12);
+    }
+
+    .shot-visual::after {
+      content: attr(data-label);
+      white-space: pre;
+      position: absolute;
+      left: 11px;
+      right: 11px;
+      top: 66px;
+      min-height: 65px;
+      border-radius: 3px;
+      background: rgba(255, 251, 244, 0.88);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #292622;
+      font-size: 0.55rem;
+      letter-spacing: 0.08em;
+      line-height: 1.2;
+      font-weight: 400;
+    }
+
+    .product-info {
+      padding: 18px 2px 0;
+    }
+
+    .product-info h3 {
+      font-size: 1.05rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .package-price {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 0 12px;
+      margin: 0 0 10px;
+      border-radius: 999px;
+      color: color-mix(in srgb, var(--accent), #111 18%);
+      background: color-mix(in srgb, var(--accent), transparent 88%);
+      border: 1px solid color-mix(in srgb, var(--accent), transparent 76%);
+      font-size: 0.83rem;
+      letter-spacing: -0.02em;
+    }
+
+    .product-info p {
+      color: #716a63;
+      font-size: 0.88rem;
+      min-height: 48px;
+      margin-bottom: 18px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin-bottom: 16px;
+    }
+
+    .qty-control {
+      height: 44px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.68);
+      border-radius: 999px;
+      display: grid;
+      grid-template-columns: 48px 1fr 48px;
+      align-items: center;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .qty-control button {
+      height: 100%;
+      background: transparent;
+      color: #8f8983;
+      font-size: 1.12rem;
+      transition: color 0.18s ease, background 0.18s ease;
+    }
+
+    .qty-control button:hover {
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent), transparent 94%);
+    }
+
+    .qty-control span {
+      text-align: center;
+      font-weight: 400;
+      color: #322f2c;
+      font-size: 0.9rem;
+    }
+
+    .add-btn {
+      width: 100%;
+      background: var(--accent);
+      color: white;
+      min-height: 46px;
+    }
+
+    .add-btn svg,
+    .submit-btn svg,
+    .btn-dark svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .values-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 8% 18%, rgba(239, 121, 0, 0.12), transparent 28%),
+        radial-gradient(circle at 92% 26%, rgba(79, 143, 31, 0.11), transparent 26%),
+        radial-gradient(circle at 82% 92%, rgba(160, 24, 88, 0.10), transparent 30%),
+        #f4f1ed;
+      border-top: 1px solid rgba(32, 33, 36, 0.04);
+      border-bottom: 1px solid rgba(32, 33, 36, 0.04);
+    }
+
+    .values-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(120deg, rgba(255,255,255,0.32), transparent 48%);
+    }
+
+    .values-section .page-shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+      margin-top: 34px;
+    }
+
+    .review-card,
+    .summary-card,
+    .delivery-card,
+    .form-card {
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .value-card {
+      position: relative;
+      min-height: 118px;
+      padding: 10px 0 24px 72px;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .value-card:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 58px;
+      bottom: -8px;
+      width: 1px;
+      background: linear-gradient(to bottom, color-mix(in srgb, var(--tone), transparent 42%), transparent);
+    }
+
+    .value-icon {
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 46px;
+      height: 46px;
+      border-radius: 18px;
+      border: 1px solid color-mix(in srgb, var(--tone), transparent 70%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+      color: var(--tone, var(--orange));
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.88), color-mix(in srgb, var(--tone), white 88%));
+      box-shadow: 0 12px 30px color-mix(in srgb, var(--tone), transparent 88%);
+    }
+
+    .value-icon::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      right: -4px;
+      bottom: -4px;
+      border-radius: 999px;
+      background: var(--tone, var(--orange));
+    }
+
+    .value-card h3 {
+      font-size: 1rem;
+      letter-spacing: -0.025em;
+      margin-bottom: 7px;
+    }
+
+    .value-card p {
+      color: #716a63;
+      font-size: 0.85rem;
+      line-height: 1.72;
+      max-width: 34rem;
+    }
+
+    .reviews-marquee {
+      width: 100%;
+      overflow: hidden;
+      padding: 4px 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    }
+
+    .reviews-track {
+      display: flex;
+      align-items: stretch;
+      gap: 18px;
+      width: max-content;
+      animation: reviewsSlide 30s linear infinite;
+      will-change: transform;
+    }
+
+    @keyframes reviewsSlide {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-50% - 9px)); }
+    }
+
+    .review-card {
+      flex: 0 0 clamp(260px, 82vw, 330px);
+      padding: 24px;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stars {
+      color: var(--orange);
+      letter-spacing: 0.16em;
+      font-size: 0.72rem;
+      margin-bottom: 16px;
+    }
+
+    .quote {
+      color: #5f5a55;
+      font-size: 0.91rem;
+      font-style: italic;
+      margin-bottom: 28px;
+    }
+
+    .review-foot {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: #fff7ed;
+      color: #9b673d;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 400;
+    }
+
+    .review-name {
+      font-size: 0.84rem;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .review-role {
+      color: #a09386;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .order-section {
+      background: #f6f3ef;
+    }
+
+    .order-grid {
+      display: grid;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .summary-card,
+    .delivery-card,
+    .form-card {
+      border-radius: 18px;
+      background: rgba(255,255,255,0.74);
+    }
+
+    .summary-card,
+    .form-card {
+      padding: 24px;
+    }
+
+    .summary-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 18px;
+    }
+
+    .summary-head h3 {
+      font-size: 1.02rem;
+      letter-spacing: -0.02em;
+    }
+
+    .items-badge {
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--line-warm);
+      background: var(--orange-soft);
+      color: var(--orange);
+      font-size: 0.72rem;
+      white-space: nowrap;
+    }
+
+    .empty-cart {
+      min-height: 130px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #8b8177;
+      text-align: center;
+      gap: 7px;
+      font-size: 0.9rem;
+    }
+
+    .empty-cart a {
+      color: var(--orange);
+      font-weight: 400;
+    }
+
+    .cart-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cart-item:last-child {
+      border-bottom: 0;
+    }
+
+    .cart-title {
+      font-size: 0.88rem;
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .cart-meta {
+      color: #8e847b;
+      font-size: 0.78rem;
+      margin-top: 3px;
+    }
+
+    .cart-actions {
+      display: inline-grid;
+      grid-template-columns: 30px 28px 30px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      overflow: hidden;
+      background: white;
+    }
+
+    .cart-actions button {
+      height: 30px;
+      background: transparent;
+      color: #77716a;
+      transition: color 0.18s ease, background 0.18s ease;
+    }
+
+    .cart-actions button:hover {
+      color: var(--orange);
+      background: #fff5eb;
+    }
+
+    .cart-actions span {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 400;
+    }
+
+    .package-config {
+      margin-top: 14px;
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid color-mix(in srgb, var(--orange), transparent 82%);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(239, 121, 0, 0.08), transparent 36%),
+        linear-gradient(135deg, rgba(255, 248, 239, 0.95), rgba(255, 253, 250, 0.95));
+    }
+
+    .package-config + .package-config {
+      margin-top: 12px;
+    }
+
+    .package-config-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .package-config-title {
+      font-size: 0.88rem;
+      line-height: 1.35;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+
+    .package-config-subtitle {
+      margin-top: 3px;
+      color: #877d73;
+      font-size: 0.72rem;
+      line-height: 1.45;
+    }
+
+    .package-progress {
+      flex: 0 0 auto;
+      min-width: 70px;
+      text-align: center;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--orange);
+      background: rgba(239, 121, 0, 0.08);
+      border: 1px solid rgba(239, 121, 0, 0.16);
+      font-size: 0.72rem;
+      font-weight: 400;
+    }
+
+    .package-progress.is-complete {
+      color: var(--green);
+      background: rgba(79, 143, 31, 0.08);
+      border-color: rgba(79, 143, 31, 0.16);
+    }
+
+    .package-flavours {
+      display: grid;
+      gap: 8px;
+    }
+
+    .package-flavour-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(32, 33, 36, 0.055);
+    }
+
+    .package-flavour-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .package-flavour-name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      font-size: 0.76rem;
+      line-height: 1.3;
+      color: #433d37;
+    }
+
+    .flavour-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      flex: 0 0 auto;
+      background: var(--flavour-tone);
+    }
+
+    .mini-qty {
+      display: inline-grid;
+      grid-template-columns: 26px 26px 26px;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid rgba(32, 33, 36, 0.08);
+      background: rgba(255, 255, 255, 0.72);
+      overflow: hidden;
+    }
+
+    .mini-qty button {
+      height: 26px;
+      background: transparent;
+      color: #80776e;
+      transition: color 0.18s ease, background 0.18s ease;
+    }
+
+    .mini-qty button:hover {
+      color: var(--orange);
+      background: rgba(239, 121, 0, 0.08);
+    }
+
+    .mini-qty span {
+      text-align: center;
+      font-size: 0.72rem;
+      color: #2f2b27;
+      font-weight: 400;
+    }
+
+    .package-choice-summary {
+      margin-top: 5px;
+      color: #8d8379;
+      font-size: 0.72rem;
+      line-height: 1.45;
+    }
+
+
+    .delivery-card {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      align-items: start;
+      margin-top: 20px;
+    }
+
+    .delivery-card h3 {
+      font-size: 0.96rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .delivery-card p {
+      color: #716a63;
+      font-size: 0.82rem;
+      line-height: 1.6;
+    }
+
+    .truck-icon {
+      font-size: 1.2rem;
+    }
+
+    .form-card {
+      display: grid;
+      gap: 20px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 9px;
+      color: #8a7564;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .input-wrap {
+      position: relative;
+    }
+
+    .input-wrap svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: #a99b8c;
+      pointer-events: none;
+    }
+
+    .field input {
+      width: 100%;
+      min-height: 52px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--text);
+      outline: none;
+      padding: 0 18px 0 46px;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .field input::placeholder {
+      color: #b2aaa2;
+    }
+
+    .field input:focus {
+      border-color: rgba(239, 121, 0, 0.34);
+      box-shadow: 0 0 0 4px rgba(239, 121, 0, 0.07);
+      background: white;
+    }
+
+    .submit-btn {
+      min-height: 54px;
+      width: 100%;
+      margin-top: 2px;
+    }
+
+    .form-note,
+    .form-error {
+      font-size: 0.78rem;
+      text-align: center;
+      color: #9a8c80;
+      line-height: 1.6;
+    }
+
+    .form-error {
+      display: none;
+      color: #a0182a;
+      background: rgba(160, 24, 42, 0.06);
+      border: 1px solid rgba(160, 24, 42, 0.12);
+      padding: 10px 12px;
+      border-radius: 14px;
+      text-align: left;
+    }
+
+    .form-error.is-visible {
+      display: block;
+    }
+
+
+    .about-section {
+      background:
+        radial-gradient(circle at 12% 18%, rgba(239, 121, 0, 0.08), transparent 28%),
+        radial-gradient(circle at 88% 70%, rgba(160, 24, 88, 0.06), transparent 30%),
+        var(--bg);
+      border-top: 1px solid rgba(32, 33, 36, 0.04);
+    }
+
+    .about-card {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: clamp(26px, 5vw, 46px);
+      border-radius: 28px;
+      background: rgba(255, 253, 250, 0.72);
+      border: 1px solid rgba(32, 33, 36, 0.07);
+      box-shadow: 0 22px 60px rgba(42, 35, 29, 0.055);
+    }
+
+    .about-card .section-heading {
+      text-align: left;
+      margin: 0 0 24px;
+      max-width: 680px;
+    }
+
+    .about-card .small-line {
+      margin-left: 0;
+    }
+
+    .about-layout {
+      display: grid;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .about-image {
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      background: #1b0b0b;
+      box-shadow: 0 22px 55px rgba(45, 24, 18, 0.14);
+      max-width: 360px;
+    }
+
+    .about-image img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .about-image-caption {
+      padding: 14px 16px;
+      background: rgba(17, 17, 17, 0.94);
+      color: rgba(255,255,255,0.88);
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+
+    .about-image-caption span {
+      display: block;
+      color: var(--orange);
+      font-size: 0.68rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .about-text {
+      display: grid;
+      gap: 16px;
+      color: #625b55;
+      font-size: clamp(0.9rem, 2.8vw, 1rem);
+      line-height: 1.85;
+    }
+
+    .about-signature {
+      margin-top: 12px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(32, 33, 36, 0.08);
+      color: #24211f;
+      line-height: 1.7;
+      letter-spacing: -0.02em;
+    }
+
+
+
+    .site-footer {
+      background: #111111;
+      color: white;
+      padding: 56px 0 34px;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 34px;
+    }
+
+    .footer-logo {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-logo span {
+      color: #957965;
+    }
+
+    .footer-text,
+    .footer-bottom,
+    .service-time {
+      color: #8a8f99;
+      font-size: 0.84rem;
+      max-width: 430px;
+    }
+
+    .footer-title {
+      color: white;
+      text-transform: uppercase;
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+      color: #d7d7d7;
+      font-size: 0.9rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    .footer-phone {
+      display: inline-block;
+      margin: 8px 0 14px;
+      font-size: 1.03rem;
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .footer-line {
+      height: 1px;
+      background: rgba(255,255,255,0.09);
+      margin: 34px 0 22px;
+    }
+
+    .footer-bottom-row {
+      display: grid;
+      gap: 12px;
+    }
+
+    @media (min-width: 600px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .extra-products-grid {
+        gap: 18px;
+      }
+
+      .flavour-set {
+        gap: 18px;
+        padding-right: 18px;
+      }
+
+      .flavour-slide {
+        flex-basis: 205px;
+        min-width: 205px;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 880px) {
+      .page-shell {
+        width: min(var(--wrap), calc(100% - 72px));
+      }
+
+      .nav-links {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      .mobile-panel {
+        display: none !important;
+      }
+
+      .hero {
+        padding: 86px 0 96px;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(430px, 0.9fr);
+        gap: 78px;
+      }
+
+      .hero-visual {
+        min-height: 360px;
+      }
+
+      .floating-note {
+        left: -28px;
+        bottom: -20px;
+      }
+
+      .section {
+        padding: 94px 0;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px;
+      }
+
+      .extra-products-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .flavour-slider-wrap {
+        margin-top: 42px;
+      }
+
+      .flavour-track {
+        animation-duration: 70s;
+      }
+
+      .flavour-slide {
+        flex-basis: 235px;
+        min-width: 235px;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px;
+        align-items: start;
+      }
+
+      .value-card {
+        min-height: auto;
+        padding: 74px 0 0;
+      }
+
+      .value-card:not(:last-child)::after {
+        left: 58px;
+        top: 24px;
+        right: -28px;
+        bottom: auto;
+        width: auto;
+        height: 1px;
+        background: linear-gradient(to right, color-mix(in srgb, var(--tone), transparent 52%), transparent);
+      }
+
+      .value-icon {
+        left: 0;
+        top: 0;
+      }
+
+      .reviews-track {
+        gap: 22px;
+        animation-duration: 70s;
+      }
+
+      .review-card {
+        flex-basis: 290px;
+      }
+
+      .order-grid {
+        grid-template-columns: minmax(300px, 0.88fr) minmax(420px, 1.28fr);
+        gap: 38px;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .about-layout {
+        grid-template-columns: 0.42fr 1fr;
+        gap: 42px;
+      }
+
+      .about-image {
+        position: sticky;
+        top: 98px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.35fr 0.55fr 0.95fr;
+        align-items: start;
+      }
+
+      .footer-bottom-row {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 1120px) {
+      .hero-grid {
+        grid-template-columns: 1fr 0.98fr;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .primary-pill {
+        padding: 0 13px;
+        font-size: 0.78rem;
+      }
+
+      .icon-btn {
+        display: none;
+      }
+
+      .hero-actions .btn-dark,
+      .hero-actions .btn-ghost {
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.78rem, 8.7vw, 2.5rem);
+      }
+
+      .hero-title .title-line {
+        white-space: normal;
+      }
+
+      .hero-title .title-line + .title-line {
+        margin-top: 0.16em;
+      }
+
+      .hero-visual {
+        min-height: 285px;
+        border-width: 6px;
+      }
+
+      .bottle-lineup {
+        left: 5%;
+        right: 5%;
+        gap: 6px;
+      }
+
+      .bottle {
+        height: 114px;
+      }
+
+      .bottle:nth-child(2),
+      .bottle:nth-child(4) { height: 126px; }
+      .bottle:nth-child(3) { height: 136px; }
+
+      .floating-note {
+        left: 10px;
+        right: 10px;
+        max-width: none;
+      }
+
+      .product-card,
+      .summary-card,
+      .form-card {
+        padding: 16px;
+      }
+
+      .product-image {
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 599px) {
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .product-card {
+        padding: 10px;
+        border-radius: 16px;
+      }
+
+      .product-image {
+        min-height: 0;
+        border-radius: 13px;
+      }
+
+      .flavour {
+        top: 8px;
+        left: 8px;
+        max-width: calc(100% - 16px);
+        padding: 4px 7px;
+        font-size: 0.5rem;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .product-info {
+        padding: 10px 0 0;
+      }
+
+      .product-info h3 {
+        font-size: 0.82rem;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+        margin-bottom: 7px;
+        min-height: 39px;
+      }
+
+      .package-price {
+        min-height: 23px;
+        padding: 0 8px;
+        margin-bottom: 7px;
+        font-size: 0.64rem;
+      }
+
+      .product-info p {
+        font-size: 0.64rem;
+        line-height: 1.36;
+        min-height: 54px;
+        margin-bottom: 10px;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .divider {
+        margin-bottom: 9px;
+      }
+
+      .qty-control {
+        height: 32px;
+        grid-template-columns: 30px 1fr 30px;
+        margin-bottom: 8px;
+      }
+
+      .qty-control button {
+        font-size: 0.95rem;
+      }
+
+      .qty-control span {
+        font-size: 0.7rem;
+      }
+
+      .add-btn {
+        min-height: 34px;
+        padding: 0 6px;
+        font-size: 0.6rem;
+        border-radius: 999px;
+      }
+
+      .add-btn svg {
+        width: 11px;
+        height: 11px;
+      }
+
+      .flavour-slider-head,
+      .extra-products-head {
+        text-align: left;
+      }
+
+      .extra-products-wrap {
+        margin-top: 34px;
+      }
+
+      .placeholder-product {
+        min-height: 145px;
+        padding: 12px;
+      }
+
+      .placeholder-product span {
+        width: 52px;
+        height: 52px;
+        font-size: 1.25rem;
+      }
+
+      .placeholder-product small {
+        font-size: 0.56rem;
+      }
+
+      .flavour-slide {
+        flex-basis: 150px;
+        min-width: 150px;
+        border-radius: 18px;
+      }
+
+      .flavour-slide-name {
+        font-size: 0.7rem;
+      }
+
+      .package-config {
+        padding: 13px;
+        border-radius: 16px;
+      }
+
+      .package-config-head {
+        flex-direction: column;
+        gap: 7px;
+      }
+
+      .package-progress {
+        align-self: flex-start;
+      }
+
+      .package-flavour-name {
+        font-size: 0.72rem;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-shell header-inner">
+      <a href="#kryefaqja" class="logo" aria-label="Illyrian Healthy Line home">Illyrian <span>Healthy Line</span><i class="dot" aria-hidden="true"></i></a>
+
+      <nav class="nav-links" aria-label="Navigimi kryesor">
+        <a href="#kryefaqja">Kryefaqja</a>
+        <a href="#produktet">Produktet</a>
+        <a href="#pershtypje">Përshtypje</a>
+        <a href="#porosit">Porosit</a>
+        <a href="#rreth-nesh">Rreth nesh</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#porosit" class="icon-btn" aria-label="Shporta">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1.2 11H7.2L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/><path d="M9.2 11h5.6"/></svg>
+          <span id="cartCount" class="cart-count">0</span>
+        </a>
+        <a href="#porosit" class="primary-pill">Porosit tani</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Hap menunë" aria-expanded="false" aria-controls="mobilePanel">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobilePanel" class="mobile-panel">
+      <a href="#kryefaqja">Kryefaqja</a>
+      <a href="#produktet">Produktet</a>
+      <a href="#pershtypje">Përshtypje</a>
+      <a href="#porosit">Porosit</a>
+      <a href="#rreth-nesh">Rreth nesh</a>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="hero" id="kryefaqja">
+      <div class="page-shell hero-grid">
+        <div>
+          <div class="eyebrow-pill">100% Natyral & i freskët</div>
+          <h1 class="hero-title"><span class="title-line">Ginger Shot për <span class="accent">energji</span></span><span class="title-line"><span class="accent">tretje</span> & mirëqenie ditore</span></h1>
+          <p>Zgjidh shijen tënde të preferuar, shtoje në shportë dhe porosit direkt përmes WhatsApp.</p>
+          <div class="hero-actions">
+            <a class="btn-dark" href="#produktet">Shiko produktet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+            <a class="btn-ghost" href="#vlerat">Pse Ginger Shot?</a>
+          </div>
+        </div>
+
+        <div class="hero-visual-wrap" aria-label="Ginger Shot bottles">
+          <div class="hero-visual">
+            <img src="assets/ginger-shot-hero.png" alt="Ginger Shot shishe me shije të ndryshme" loading="eager" />
+          </div>
+          <div class="floating-note">
+            <span class="note-icon">☘</span>
+            <div>
+              <small>Produkt i pastër</small>
+              <p>Pa konservues apo sheqerna të shtuara</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="produktet">
+      <div class="page-shell">
+        <div class="section-heading">
+          <div class="kicker">Zgjidh pakon tënde</div>
+          <h2>Zgjidh pakon Ginger Shot</h2>
+          <div class="small-line"></div>
+          <p>Zgjidh pakon që të përshtatet më shumë dhe pastaj cakto vetë sa shots dëshiron nga secila shije.</p>
+        </div>
+        <div id="productsGrid" class="products-grid"></div>
+        <div class="flavour-slider-wrap" aria-label="Shijet e Ginger Shot">
+          <div class="flavour-slider-head">
+            <span>Shijet që mund t’i zgjedhësh në pako</span>
+            <p>Zgjidh kombinimin tënd nga këto shot types.</p>
+          </div>
+          <div class="flavour-marquee">
+            <div class="flavour-track">
+              <div class="flavour-set" aria-hidden="false">
+                <article class="flavour-slide" style="--slide-tone:#a01858">
+                  <div class="flavour-slide-image"><img src="assets/slider-beetroot.png" alt="Beetroot Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Beetroot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef4b00">
+                  <div class="flavour-slide-image"><img src="assets/slider-carrot.png" alt="Carrot Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Carrot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#76a51b">
+                  <div class="flavour-slide-image"><img src="assets/slider-green-apple.png" alt="Green Apple Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Green Apple Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef7900">
+                  <div class="flavour-slide-image"><img src="assets/slider-orange.png" alt="Orange Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Orange Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#805336">
+                  <div class="flavour-slide-image"><img src="assets/slider-coffee.png" alt="Coffee & Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Coffee & Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#a01858">
+                  <div class="flavour-slide-image"><img src="assets/slider-beetroot.png" alt="Beetroot Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Beetroot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef4b00">
+                  <div class="flavour-slide-image"><img src="assets/slider-carrot.png" alt="Carrot Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Carrot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#76a51b">
+                  <div class="flavour-slide-image"><img src="assets/slider-green-apple.png" alt="Green Apple Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Green Apple Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef7900">
+                  <div class="flavour-slide-image"><img src="assets/slider-orange.png" alt="Orange Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Orange Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#805336">
+                  <div class="flavour-slide-image"><img src="assets/slider-coffee.png" alt="Coffee & Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Coffee & Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#a01858">
+                  <div class="flavour-slide-image"><img src="assets/slider-beetroot.png" alt="Beetroot Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Beetroot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef4b00">
+                  <div class="flavour-slide-image"><img src="assets/slider-carrot.png" alt="Carrot Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Carrot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#76a51b">
+                  <div class="flavour-slide-image"><img src="assets/slider-green-apple.png" alt="Green Apple Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Green Apple Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef7900">
+                  <div class="flavour-slide-image"><img src="assets/slider-orange.png" alt="Orange Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Orange Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#805336">
+                  <div class="flavour-slide-image"><img src="assets/slider-coffee.png" alt="Coffee & Ginger Shot" loading="eager"></div>
+                  <div class="flavour-slide-name">Coffee & Ginger Shot</div>
+                </article>
+              </div>
+              <div class="flavour-set" aria-hidden="true">
+                <article class="flavour-slide" style="--slide-tone:#a01858">
+                  <div class="flavour-slide-image"><img src="assets/slider-beetroot.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Beetroot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef4b00">
+                  <div class="flavour-slide-image"><img src="assets/slider-carrot.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Carrot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#76a51b">
+                  <div class="flavour-slide-image"><img src="assets/slider-green-apple.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Green Apple Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef7900">
+                  <div class="flavour-slide-image"><img src="assets/slider-orange.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Orange Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#805336">
+                  <div class="flavour-slide-image"><img src="assets/slider-coffee.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Coffee & Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#a01858">
+                  <div class="flavour-slide-image"><img src="assets/slider-beetroot.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Beetroot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef4b00">
+                  <div class="flavour-slide-image"><img src="assets/slider-carrot.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Carrot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#76a51b">
+                  <div class="flavour-slide-image"><img src="assets/slider-green-apple.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Green Apple Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef7900">
+                  <div class="flavour-slide-image"><img src="assets/slider-orange.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Orange Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#805336">
+                  <div class="flavour-slide-image"><img src="assets/slider-coffee.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Coffee & Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#a01858">
+                  <div class="flavour-slide-image"><img src="assets/slider-beetroot.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Beetroot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef4b00">
+                  <div class="flavour-slide-image"><img src="assets/slider-carrot.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Carrot Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#76a51b">
+                  <div class="flavour-slide-image"><img src="assets/slider-green-apple.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Green Apple Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#ef7900">
+                  <div class="flavour-slide-image"><img src="assets/slider-orange.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Orange Ginger Shot</div>
+                </article>
+                <article class="flavour-slide" style="--slide-tone:#805336">
+                  <div class="flavour-slide-image"><img src="assets/slider-coffee.png" alt="" loading="eager"></div>
+                  <div class="flavour-slide-name">Coffee & Ginger Shot</div>
+                </article>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="extra-products-wrap">
+          <div class="extra-products-head">
+            <span>Produkte shtesë</span>
+            <p>Shto edhe këto produkte në shportë dhe porositi bashkë në WhatsApp.</p>
+          </div>
+          <div id="extraProductsGrid" class="extra-products-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section values-section" id="vlerat">
+      <div class="page-shell">
+        <div class="section-heading left">
+          <div class="kicker">Pse na zgjedhin ne</div>
+          <h2>Vlerat tona kryesore</h2>
+          <div class="small-line"></div>
+        </div>
+        <div class="values-grid">
+          <article class="value-card" style="--tone:#6b9b39">
+            <span class="value-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c9 0 14-5 14-14-9 0-14 5-14 14Z"/><path d="M5 19c4-5 8-8 14-14"/></svg></span>
+            <h3>Përbërës natyralë</h3>
+            <p>E bërë ekskluzivisht me përbërës të freskët dhe organikë, pa konservues të shtuar.</p>
+          </article>
+          <article class="value-card" style="--tone:#ef7900">
+            <span class="value-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14v10H5z"/><path d="m5 8 7 5 7-5"/></svg></span>
+            <h3>Porosi e shpejtë në WhatsApp</h3>
+            <p>Shtoni produktet në shportë dhe dërgoni porosinë menjëherë me një klikim.</p>
+          </article>
+          <article class="value-card" style="--tone:#a01858">
+            <span class="value-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4"/><path d="M12 17v4"/><path d="M3 12h4"/><path d="M17 12h4"/><path d="m5.6 5.6 2.8 2.8"/><path d="m15.6 15.6 2.8 2.8"/><path d="m18.4 5.6-2.8 2.8"/><path d="m8.4 15.6-2.8 2.8"/></svg></span>
+            <h3>Shije të ndryshme</h3>
+            <p>Nga shija e fortë e kafesë te ëmbëlsia e panxharit dhe freskia e mollës jeshile.</p>
+          </article>
+          <article class="value-card" style="--tone:#7c736b">
+            <span class="value-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4v3"/><path d="M17 4v3"/><rect x="5" y="6" width="14" height="14" rx="2"/><path d="M8 11h8"/><path d="M8 15h5"/></svg></span>
+            <h3>Praktike për përdorim ditor</h3>
+            <p>Një shishe e vogël me përfitime maksimale që përshtatet lehtësisht në çantën tuaj.</p>
+          </article>
+          <article class="value-card" style="--tone:#a07650">
+            <span class="value-icon"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></span>
+            <h3>Fresh & minimal wellness product</h3>
+            <p>Një ritual i thjeshtë ditor për të mbështetur sistemin tuaj tretës dhe mirëqenien e plotë.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pershtypje">
+      <div class="page-shell">
+        <div class="section-heading">
+          <div class="kicker">Opinione reale</div>
+          <h2>Çfarë thonë klientët tanë</h2>
+          <div class="small-line"></div>
+        </div>
+        <div class="reviews-marquee" aria-label="Përshtypjet e klientëve">
+          <div class="reviews-track">
+          <article class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="quote">“Shumë shije e mirë dhe praktike për mëngjes. Më jep energji gjatë ditës.”</p>
+            </div>
+            <div class="review-foot"><span class="avatar">A</span><div><div class="review-name">Arta K.</div><div class="review-role">Konsumator i rregullt</div></div></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="quote">“E përdor çdo ditë pas ushqimit. Më pëlqen shumë shija Orange.”</p>
+            </div>
+            <div class="review-foot"><span class="avatar">L</span><div><div class="review-name">Liridon M.</div><div class="review-role">Konsumator i rregullt</div></div></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="quote">“Produkti duket shumë cilësor dhe porosia ishte shumë e lehtë përmes WhatsApp.”</p>
+            </div>
+            <div class="review-foot"><span class="avatar">E</span><div><div class="review-name">Elira B.</div><div class="review-role">Konsumator i rregullt</div></div></div>
+          </article>
+          <article class="review-card">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="quote">“Green Apple është shumë freskues. Website-i është i thjeshtë dhe porosia bëhet shumë shpejt.”</p>
+            </div>
+            <div class="review-foot"><span class="avatar">D</span><div><div class="review-name">Dren S.</div><div class="review-role">Konsumator i rregullt</div></div></div>
+          </article>
+          <article class="review-card" aria-hidden="true">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="quote">“Shumë shije e mirë dhe praktike për mëngjes. Më jep energji gjatë ditës.”</p>
+            </div>
+            <div class="review-foot"><span class="avatar">A</span><div><div class="review-name">Arta K.</div><div class="review-role">Konsumator i rregullt</div></div></div>
+          </article>
+          <article class="review-card" aria-hidden="true">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="quote">“E përdor çdo ditë pas ushqimit. Më pëlqen shumë shija Orange.”</p>
+            </div>
+            <div class="review-foot"><span class="avatar">L</span><div><div class="review-name">Liridon M.</div><div class="review-role">Konsumator i rregullt</div></div></div>
+          </article>
+          <article class="review-card" aria-hidden="true">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="quote">“Produkti duket shumë cilësor dhe porosia ishte shumë e lehtë përmes WhatsApp.”</p>
+            </div>
+            <div class="review-foot"><span class="avatar">E</span><div><div class="review-name">Elira B.</div><div class="review-role">Konsumator i rregullt</div></div></div>
+          </article>
+          <article class="review-card" aria-hidden="true">
+            <div>
+              <div class="stars">★★★★★</div>
+              <p class="quote">“Green Apple është shumë freskues. Website-i është i thjeshtë dhe porosia bëhet shumë shpejt.”</p>
+            </div>
+            <div class="review-foot"><span class="avatar">D</span><div><div class="review-name">Dren S.</div><div class="review-role">Konsumator i rregullt</div></div></div>
+          </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section order-section" id="porosit">
+      <div class="page-shell">
+        <div class="section-heading">
+          <div class="kicker">Porosit thjeshtë</div>
+          <h2>Të dhënat për porosi</h2>
+          <p>Plotësoni të dhënat e dërgesës vetëm një herë për të gjitha produktet tuaja të zgjedhura.</p>
+        </div>
+        <div class="order-grid">
+          <div>
+            <div class="summary-card">
+              <div class="summary-head">
+                <h3>Përmbledhja e porosisë</h3>
+                <span id="itemsBadge" class="items-badge">0 shishe</span>
+              </div>
+              <div id="cartContent"></div>
+            </div>
+          </div>
+
+          <form id="orderForm" class="form-card" novalidate>
+            <div class="form-error" id="formError"></div>
+            <div class="field">
+              <label for="name">Emri dhe mbiemri</label>
+              <div class="input-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+                <input id="name" name="name" type="text" placeholder="Filan Fisteku" autocomplete="name" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="address">Adresa e plotë</label>
+              <div class="input-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.1 7-11a7 7 0 0 0-14 0c0 5.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></svg>
+                <input id="address" name="address" type="text" placeholder="Rruga, Qyteti, Nr. banesës / shtëpisë" autocomplete="street-address" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="phone">Numri i telefonit</label>
+              <div class="input-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1.02.36 2.02.7 2.98a2 2 0 0 1-.45 2.11L8.1 10.1a16 16 0 0 0 5.8 5.8l1.29-1.26a2 2 0 0 1 2.11-.45c.96.34 1.96.57 2.98.7A2 2 0 0 1 22 16.92Z"/></svg>
+                <input id="phone" name="phone" type="tel" placeholder="+383 49 123 456" autocomplete="tel" />
+              </div>
+            </div>
+            <button class="submit-btn" type="submit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"/></svg>
+              Dërgo porosinë në WhatsApp
+            </button>
+            <p class="form-note">Duke klikuar butonin më lart, do të kaloni te biseda zyrtare në WhatsApp për të konfirmuar porosinë tuaj.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="rreth-nesh">
+      <div class="page-shell">
+        <div class="about-card">
+          <div class="section-heading">
+            <div class="kicker">Mjalta Produkt</div>
+            <h2>Rreth Nesh</h2>
+            <div class="small-line"></div>
+          </div>
+
+          <div class="about-layout">
+            <figure class="about-image">
+              <img src="assets/egzon-shkololli.png" alt="Egzon Shkololli" loading="lazy">
+              <figcaption class="about-image-caption">Egzon Shkololli<span>Themelues / Trajner fitnesi</span></figcaption>
+            </figure>
+
+            <div class="about-text">
+              <p>Mjalta Produkt është një kompani nga Peja, Kosovë, e specializuar në prodhimin e produkteve natyrale dhe funksionale për një stil jetese aktiv. Përmes brendit tonë Illyrian Healthy Line, synojmë t’u ofrojmë klientëve produkte me cilësi të lartë, të krijuara me përkushtim dhe standarde të larta.</p>
+
+            <p>Themeluesi i kompanisë, Egzon Shkololli, është trajner fitnesi me mbi 15 vite përvojë, duke ndihmuar për shumë vite njerëzit të ndërtojnë zakone më të mira të të ushqyerit dhe një mënyrë jetese më aktive.</p>
+
+            <p>Në vitin 2021 filluam prodhimin e Ginger Shot, produkti që u bë baza e zhvillimit të Illyrian Healthy Line. Sot, përveç Ginger Shot, ofrojmë edhe Cold Pressed Juice, Water Detox, 100% Peanut Butter, mjaltë dhe produkte të tjera natyrale.</p>
+
+            <p>Ne besojmë se cilësia fillon nga përbërësit. Për këtë arsye përdorim lëndë të para të përzgjedhura me kujdes dhe krijojmë produkte sa më natyrale.</p>
+
+            <p>Sot, produktet e Illyrian Healthy Line konsumohen nga mijëra klientë dhe shpërndahen çdo ditë në Kosovë, Shqipëri dhe Maqedoninë e Veriut, duke fituar besimin e konsumatorëve falë cilësisë, freskisë dhe përkushtimit tonë.</p>
+
+            <p>Misioni ynë është të vazhdojmë të zhvillojmë produkte natyrale me standarde të larta, duke u bërë zgjedhja e parë për çdo person që vlerëson cilësinë dhe një stil jetese aktiv.</p>
+
+            <div class="about-signature">
+              <p>Mjalta Produkt<br>Illyrian Healthy Line<br>Pejë, Kosovë</p>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-shell">
+      <div class="footer-grid">
+        <div>
+          <div class="logo footer-logo">Ginger <span>Shot</span><i class="dot" aria-hidden="true"></i></div>
+          <p class="footer-text">Rituali juaj i përditshëm i shëndetit dhe mirëqenies në një shishe të vetme. 100% natyral, i ftohtë, dhe i përgatitur me dashuri.</p>
+        </div>
+        <div>
+          <div class="footer-title">Lidhje të shpejta</div>
+          <nav class="footer-links" aria-label="Lidhje të shpejta">
+            <a href="#kryefaqja">Kryefaqja</a>
+            <a href="#produktet">Produktet tona</a>
+            <a href="#pershtypje">Përshtypjet</a>
+            <a href="#porosit">Porosit tani</a>
+            <a href="#rreth-nesh">Rreth nesh</a>
+          </nav>
+        </div>
+        <div>
+          <div class="footer-title">Na kontaktoni</div>
+          <p class="footer-text">Porosit direkt përmes WhatsApp</p>
+          <a class="footer-phone" href="https://wa.me/38349403630" target="_blank" rel="noopener">+383 49 403 630</a>
+          <p class="service-time">Koha e shërbimit: 24 orë</p>
+        </div>
+      </div>
+      <div class="footer-line"></div>
+      <div class="footer-bottom-row">
+        <p class="footer-bottom">© 2026 Ginger Shot. Të gjitha të drejtat e rezervuara.</p>
+        <p class="footer-bottom">Sajtuar me dashuri dhe kujdes për shëndetin tuaj.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const packageFlavours = [
+      { key: "coffee", label: "Coffee & Ginger", tone: "#805336" },
+      { key: "orange", label: "Orange", tone: "#ef7900" },
+      { key: "greenApple", label: "Green Apple", tone: "#4f8f1f" },
+      { key: "carrot", label: "Carrot", tone: "#ef4b00" },
+      { key: "beetroot", label: "Beetroot", tone: "#a01858" }
+    ];
+
+    const products = [
+      {
+              id: "pako-15",
+              type: "package",
+              name: "Pako 15 shots",
+              price: "25€",
+              packageSize: 15,
+              description: "Pako me 15 shots. Klienti zgjedh vetë kombinimin e shijeve.",
+              flavour: "Pako e personalizuar",
+              image: "assets/product-full-package.png",
+              accent: "#ef7900",
+              placeholderIcon: "🥤"
+            },
+      {
+              id: "pako-31",
+              type: "package",
+              name: "Pako 31 shots",
+              price: "45€",
+              packageSize: 31,
+              description: "Pako me 31 shots. Klienti zgjedh vetë kombinimin e shijeve.",
+              flavour: "Pako e personalizuar",
+              image: "assets/product-full-package.png",
+              accent: "#a01858",
+              placeholderIcon: "🥤"
+            },
+      {
+              id: "mjalte",
+              type: "extra",
+              name: "Mjaltë",
+              price: "18€",
+              description: "Mjaltë Ginger & Turmeric për porosi.",
+              flavour: "Produkt shtesë",
+              image: "assets/mjalte.png",
+              accent: "#d49a2a",
+              placeholderIcon: "🍯"
+            },
+      {
+              id: "honey-peanut-butter",
+              type: "extra",
+              name: "Honey Peanut Butter",
+              price: "3.50€",
+              minOrder: 4,
+              description: "Minimumi i porosisë: 4 copë.",
+              flavour: "Peanut Butter",
+              image: "assets/honey-peanut-butter.png",
+              accent: "#6f45b4",
+              placeholderIcon: "🧈"
+            },
+      {
+              id: "crunchy-peanut-butter",
+              type: "extra",
+              name: "Crunchy Peanut Butter",
+              price: "3.50€",
+              minOrder: 4,
+              description: "Minimumi i porosisë: 4 copë.",
+              flavour: "Peanut Butter",
+              image: "assets/crunchy-peanut-butter.png",
+              accent: "#6f45b4",
+              placeholderIcon: "🧈"
+            },
+      {
+              id: "creamy-peanut-butter",
+              type: "extra",
+              name: "Creamy Peanut Butter",
+              price: "3.50€",
+              minOrder: 4,
+              description: "Minimumi i porosisë: 4 copë.",
+              flavour: "Peanut Butter",
+              image: "assets/creamy-peanut-butter.png",
+              accent: "#6f45b4",
+              placeholderIcon: "🧈"
+            },
+      {
+              id: "peanut-butter-offer",
+              type: "extra",
+              name: "Oferta Peanut Butter",
+              price: "12.50€",
+              description: "1x Honey, 1x Crunchy dhe 2x Creamy Peanut Butter. Posta gratis.",
+              flavour: "Ofertë speciale",
+              image: "assets/peanut-butter-offer.png",
+              accent: "#5d2484",
+              placeholderIcon: "🎁"
+            },
+      {
+              id: "atomik-bomb",
+              type: "extra",
+              name: "Atomik Bomb",
+              price: "15€",
+              description: "Produkt shtesë energjik për porosi.",
+              flavour: "Produkt shtesë",
+              image: "assets/atomic-bomb.png",
+              accent: "#3f2ba5",
+              placeholderIcon: "⚡"
+            },
+      {
+              id: "ginger-tea",
+              type: "extra",
+              name: "Ginger Tea",
+              price: "3€",
+              minOrder: 4,
+              description: "Minimumi i porosisë: 4 copë.",
+              flavour: "Produkt shtesë",
+              image: "assets/ginger-tea.png",
+              accent: "#cf7a12",
+              placeholderIcon: "🍵"
+            },
+      {
+              id: "xhenxhefil-pluhur",
+              type: "extra",
+              name: "Xhenxhefil Pluhur",
+              price: "2.50€",
+              minOrder: 3,
+              description: "Minimumi i porosisë: 3 copë.",
+              flavour: "Produkt natyral",
+              image: "assets/xhenxhefil-pluhur.png",
+              accent: "#d47a22",
+              placeholderIcon: "🌿"
+            },
+      {
+              id: "tumerik",
+              type: "extra",
+              name: "Tumerik",
+              price: "2.50€",
+              minOrder: 3,
+              description: "Minimumi i porosisë: 3 copë.",
+              flavour: "Produkt natyral",
+              image: "assets/tumerik.png",
+              accent: "#e2a217",
+              placeholderIcon: "🌱"
+            },
+      {
+              id: "fara-e-zeze",
+              type: "extra",
+              name: "Fara e Zezë",
+              price: "2.50€",
+              minOrder: 3,
+              description: "Minimumi i porosisë: 3 copë.",
+              flavour: "Produkt natyral",
+              image: "assets/fara-e-zeze.png",
+              accent: "#2f2f2f",
+              placeholderIcon: "●"
+            },
+      {
+              id: "karafil",
+              type: "extra",
+              name: "Karafil",
+              price: "2.50€",
+              minOrder: 3,
+              description: "Minimumi i porosisë: 3 copë.",
+              flavour: "Produkt natyral",
+              image: "assets/karafil.png",
+              accent: "#7b4a2f",
+              placeholderIcon: "✦"
+            },
+      {
+              id: "fara-chia",
+              type: "extra",
+              name: "Fara Chia",
+              price: "2.50€",
+              minOrder: 3,
+              description: "Minimumi i porosisë: 3 copë.",
+              flavour: "Produkt natyral",
+              image: "assets/fara-chia.png",
+              accent: "#4b4b4b",
+              placeholderIcon: "✺"
+            },
+      {
+              id: "kanelle-shkopinje",
+              type: "extra",
+              name: "Kanellë Shkopinjë",
+              price: "2.50€",
+              minOrder: 3,
+              description: "Minimumi i porosisë: 3 copë.",
+              flavour: "Produkt natyral",
+              image: "assets/kanelle-shkopinje.png",
+              accent: "#9a5a2a",
+              placeholderIcon: "〰"
+            },
+      {
+              id: "fara-liri",
+              type: "extra",
+              name: "Fara Liri",
+              price: "2.50€",
+              minOrder: 3,
+              description: "Minimumi i porosisë: 3 copë.",
+              flavour: "Produkt natyral",
+              image: "assets/fara-liri.png",
+              accent: "#b78348",
+              placeholderIcon: "◌"
+            }
+    ];
+
+    const emptyChoices = () => Object.fromEntries(packageFlavours.map(flavour => [flavour.key, 0]));
+
+
+    const state = {
+      selected: Object.fromEntries(products.map(product => [product.id, 0])),
+      cart: {},
+      packageChoices: Object.fromEntries(products.filter(product => product.packageSize).map(product => [product.id, emptyChoices()]))
+    };
+
+    const productsGrid = document.getElementById("productsGrid");
+    const extraProductsGrid = document.getElementById("extraProductsGrid");
+    const cartContent = document.getElementById("cartContent");
+    const cartCount = document.getElementById("cartCount");
+    const itemsBadge = document.getElementById("itemsBadge");
+    const formError = document.getElementById("formError");
+    const menuToggle = document.getElementById("menuToggle");
+    const mobilePanel = document.getElementById("mobilePanel");
+
+    const bagIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1.2 11H7.2L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>`;
+
+    function productCardTemplate(product) {
+      const visual = product.image
+        ? `<img class="product-photo" src="${product.image}" alt="${product.name}" loading="lazy">`
+        : `<div class="placeholder-product"><div><span>${product.placeholderIcon || "•"}</span><small>Placeholder image<br>Upload later</small></div></div>`;
+
+      return `
+        <article class="product-card" style="--accent:${product.accent}">
+          <div class="product-image">
+            ${visual}
+            <span class="flavour">${product.flavour}</span>
+          </div>
+          <div class="product-info">
+            <h3>${product.name}</h3>
+            ${product.price ? `<div class="package-price">${product.price}</div>` : ""}
+            ${product.minOrder ? `<div class="package-price">Min. ${product.minOrder} copë</div>` : ""}
+            <p>${product.description}</p>
+            <div class="divider"></div>
+            <div class="qty-control" aria-label="Sasia për ${product.name}">
+              <button type="button" aria-label="Zvogëlo sasinë" data-action="decrease" data-id="${product.id}">−</button>
+              <span id="qty-${product.id}">${state.selected[product.id]}</span>
+              <button type="button" aria-label="Rrit sasinë" data-action="increase" data-id="${product.id}">+</button>
+            </div>
+            <button class="add-btn" type="button" data-action="add" data-id="${product.id}">${bagIcon} Shto në shportë</button>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderProducts() {
+      productsGrid.innerHTML = products
+        .filter(product => product.type === "package")
+        .map(productCardTemplate)
+        .join("");
+
+      if (extraProductsGrid) {
+        extraProductsGrid.innerHTML = products
+          .filter(product => product.type === "extra")
+          .map(productCardTemplate)
+          .join("");
+      }
+    }
+
+    function productById(id) {
+      return products.find(product => product.id === id);
+    }
+
+    function itemCount() {
+      return Object.values(state.cart).reduce((sum, value) => sum + value, 0);
+    }
+
+    function packageNeeded(product) {
+      return (state.cart[product.id] || 0) * product.packageSize;
+    }
+
+    function choiceTotal(productId) {
+      const choices = state.packageChoices[productId] || emptyChoices();
+      return Object.values(choices).reduce((sum, value) => sum + value, 0);
+    }
+
+    function packageChoiceSummary(productId) {
+      const choices = state.packageChoices[productId] || emptyChoices();
+      const selected = packageFlavours
+        .filter(flavour => choices[flavour.key] > 0)
+        .map(flavour => `${flavour.label} x${choices[flavour.key]}`);
+      return selected.length ? selected.join(", ") : "Ende pa zgjedhur shije.";
+    }
+
+    function renderPackageConfigurator(product) {
+      const needed = packageNeeded(product);
+      const selected = choiceTotal(product.id);
+      const isComplete = selected === needed && needed > 0;
+      const choices = state.packageChoices[product.id] || emptyChoices();
+      const remaining = needed - selected;
+      const statusText = isComplete ? "Gati" : `${selected}/${needed}`;
+
+      return `
+        <div class="package-config" data-package-config="${product.id}">
+          <div class="package-config-head">
+            <div>
+              <div class="package-config-title">Zgjidh shijet për ${product.name}</div>
+              <div class="package-config-subtitle">Duhet të zgjedhen gjithsej ${needed} shots${remaining > 0 ? ` · kanë mbetur ${remaining}` : remaining < 0 ? ` · hiqni ${Math.abs(remaining)}` : ""}.</div>
+            </div>
+            <div class="package-progress ${isComplete ? "is-complete" : ""}">${statusText}</div>
+          </div>
+          <div class="package-flavours">
+            ${packageFlavours.map(flavour => `
+              <div class="package-flavour-row">
+                <div class="package-flavour-name"><span class="flavour-dot" style="--flavour-tone:${flavour.tone}"></span>${flavour.label}</div>
+                <div class="mini-qty" aria-label="${flavour.label} për ${product.name}">
+                  <button type="button" data-package-action="decrease" data-package-id="${product.id}" data-flavour="${flavour.key}" aria-label="Hiq ${flavour.label}">−</button>
+                  <span>${choices[flavour.key]}</span>
+                  <button type="button" data-package-action="increase" data-package-id="${product.id}" data-flavour="${flavour.key}" aria-label="Shto ${flavour.label}">+</button>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+          <div class="package-choice-summary">${packageChoiceSummary(product.id)}</div>
+        </div>
+      `;
+    }
+
+    function renderCart() {
+      const count = itemCount();
+      cartCount.textContent = count;
+      itemsBadge.textContent = `${count} ${count === 1 ? "artikull" : "artikuj"}`;
+
+      const entries = Object.entries(state.cart).filter(([, qty]) => qty > 0);
+
+      if (!entries.length) {
+        cartContent.innerHTML = `
+          <div class="empty-cart">
+            <p>Asnjë produkt i përzgjedhur.</p>
+            <a href="#produktet">Shto produkte +</a>
+          </div>
+        `;
+        return;
+      }
+
+      const listHtml = `<div class="cart-list">${entries.map(([id, qty]) => {
+        const product = productById(id);
+        const choicesText = product.packageSize ? `<div class="cart-meta">Shijet: ${packageChoiceSummary(id)}</div>` : "";
+        return `
+          <div class="cart-item">
+            <div>
+              <div class="cart-title">${product.name}${product.price ? ` · ${product.price}` : ""}</div>
+              <div class="cart-meta">Sasia: ${qty}</div>
+              ${choicesText}
+            </div>
+            <div class="cart-actions" aria-label="Ndrysho sasinë për ${product.name}">
+              <button type="button" data-cart="minus" data-id="${id}" aria-label="Zvogëlo">−</button>
+              <span>${qty}</span>
+              <button type="button" data-cart="plus" data-id="${id}" aria-label="Rrit">+</button>
+            </div>
+          </div>
+        `;
+      }).join("")}</div>`;
+
+      const packageHtml = entries
+        .map(([id]) => productById(id))
+        .filter(product => product.packageSize)
+        .map(product => renderPackageConfigurator(product))
+        .join("");
+
+      cartContent.innerHTML = listHtml + packageHtml;
+    }
+
+    function updateSelected(id, difference) {
+      state.selected[id] = Math.max(0, state.selected[id] + difference);
+      const qtyEl = document.getElementById(`qty-${id}`);
+      if (qtyEl) qtyEl.textContent = state.selected[id];
+    }
+
+    function addToCart(id) {
+      const product = productById(id);
+      let quantity = state.selected[id] || 1;
+
+      if (product && product.minOrder && quantity < product.minOrder) {
+        quantity = product.minOrder;
+      }
+
+      state.cart[id] = (state.cart[id] || 0) + quantity;
+      state.selected[id] = 0;
+      const qtyEl = document.getElementById(`qty-${id}`);
+      if (qtyEl) qtyEl.textContent = 0;
+      renderCart();
+      formError.classList.remove("is-visible");
+      if (product && product.packageSize) {
+        document.getElementById("porosit").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    function changeCart(id, difference) {
+      const product = productById(id);
+      const currentValue = state.cart[id] || 0;
+      let nextValue = currentValue + difference;
+
+      if (product && product.minOrder && difference < 0 && currentValue <= product.minOrder) {
+        nextValue = 0;
+      }
+
+      if (product && product.minOrder && nextValue > 0 && nextValue < product.minOrder) {
+        nextValue = product.minOrder;
+      }
+
+      if (nextValue <= 0) {
+        delete state.cart[id];
+        if (state.packageChoices[id]) state.packageChoices[id] = emptyChoices();
+      } else {
+        state.cart[id] = nextValue;
+        if (product && product.packageSize) {
+          const needed = packageNeeded(product);
+          while (choiceTotal(id) > needed) {
+            for (const flavour of [...packageFlavours].reverse()) {
+              if (state.packageChoices[id][flavour.key] > 0) {
+                state.packageChoices[id][flavour.key] -= 1;
+                break;
+              }
+            }
+          }
+        }
+      }
+      renderCart();
+    }
+
+    function changePackageChoice(packageId, flavourKey, difference) {
+      const product = productById(packageId);
+      if (!product || !product.packageSize || !state.cart[packageId]) return;
+      const choices = state.packageChoices[packageId] || emptyChoices();
+      const current = choices[flavourKey] || 0;
+      const needed = packageNeeded(product);
+
+      if (difference > 0 && choiceTotal(packageId) >= needed) return;
+      choices[flavourKey] = Math.max(0, current + difference);
+      state.packageChoices[packageId] = choices;
+      renderCart();
+    }
+
+
+
+    document.addEventListener("click", event => {
+      const button = event.target.closest("button");
+      if (!button) return;
+
+      const action = button.dataset.action;
+      const id = button.dataset.id;
+
+      if (action === "increase") updateSelected(id, 1);
+      if (action === "decrease") updateSelected(id, -1);
+      if (action === "add") addToCart(id);
+
+      const cartAction = button.dataset.cart;
+      const cartId = button.dataset.id;
+      if (cartAction === "plus") changeCart(cartId, 1);
+      if (cartAction === "minus") changeCart(cartId, -1);
+
+      const packageAction = button.dataset.packageAction;
+      const packageId = button.dataset.packageId;
+      const flavourKey = button.dataset.flavour;
+      if (packageAction === "increase") changePackageChoice(packageId, flavourKey, 1);
+      if (packageAction === "decrease") changePackageChoice(packageId, flavourKey, -1);
+    });
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobilePanel.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    mobilePanel.addEventListener("click", event => {
+      if (event.target.matches("a")) {
+        mobilePanel.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.getElementById("orderForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const address = document.getElementById("address").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const entries = Object.entries(state.cart).filter(([, qty]) => qty > 0);
+
+      const missing = [];
+      if (!entries.length) missing.push("Zgjidhni të paktën një produkt në shportë.");
+      if (!name) missing.push("Shkruani emrin dhe mbiemrin.");
+      if (!address) missing.push("Shkruani adresën e plotë.");
+      if (!phone) missing.push("Shkruani numrin e telefonit.");
+
+      entries.forEach(([id, qty]) => {
+        const product = productById(id);
+        if (product && product.minOrder && qty < product.minOrder) {
+          missing.push(`${product.name} ka minimum porosie ${product.minOrder} copë.`);
+        }
+        if (product && product.packageSize) {
+          const needed = product.packageSize * qty;
+          const selected = choiceTotal(id);
+          if (selected !== needed) {
+            missing.push(`Zgjidhni saktësisht ${needed} shots për ${product.name}. Aktualisht keni zgjedhur ${selected}.`);
+          }
+        }
+      });
+
+      if (missing.length) {
+        formError.innerHTML = missing.join("<br>");
+        formError.classList.add("is-visible");
+        return;
+      }
+
+      formError.classList.remove("is-visible");
+
+      const productLines = entries.map(([id, qty]) => {
+        const product = productById(id);
+        const priceText = product.price ? ` - ${product.price}` : "";
+        const packageText = product.packageSize ? `
+  Shijet: ${packageChoiceSummary(id)}` : "";
+        return `- ${product.name} x${qty}${priceText}${packageText}`;
+      }).join("\n");
+      const message = `Përshëndetje, dua të bëj një porosi për Ginger Shot.
+
+Emri dhe mbiemri: ${name}
+Adresa: ${address}
+Telefoni: ${phone}
+
+Produktet:
+${productLines}
+
+Faleminderit.`;
+      const whatsappUrl = `https://wa.me/38349403630?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, "_blank", "noopener");
+    });
+
+    renderProducts();
+    renderCart();
+  </script>
+</body>
+</html>
